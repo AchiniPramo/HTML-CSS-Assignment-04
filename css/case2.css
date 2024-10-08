@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  background-color: rgb(49, 49, 209);
+}
+
+.circle {
+  width: 350px;
+  background-color: gray;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
+}
+
+h1 {
+  width: max-content;
+  height: max-content;
+  color: white;
+  position: absolute;
+  font-size: 35px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.circle::before {
+  content: "";
+  /* space content ekak laba ganimata */
+
+  border: 15px solid white;
+  border-radius: 100%;
+  border-top-color: red;
+  /*height ekak width ekak dunne nathi unama adala parenge size ekata me space content eka adenawa*/
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+
+  animation: aroundTheCircle 3s infinite;
+}
+
+@keyframes aroundTheCircle {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
