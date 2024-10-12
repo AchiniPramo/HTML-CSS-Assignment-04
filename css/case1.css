@@ -20,7 +20,7 @@ div {
   height: 70px;
   left: -280px;
   position: relative;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   display: block;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   transition-property: left;

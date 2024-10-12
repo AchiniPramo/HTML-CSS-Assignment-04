@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case 04</title>
+    <link rel="stylesheet" href="/css/case4.css" />
+  </head>
+  <body>
+    <section>
+      <div class="on-screen"></div>
+      <div class="on-click"></div>
+    </section>
+
+    <script>
+      const section = document.querySelector("section");
+      const ripple = document.querySelector(".on-click");
+
+      section.addEventListener("click", (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+
+        ripple.style.left = `${x - 5}px`;
+        ripple.style.top = `${y - 5}px`;
+
+        ripple.style.display = "block";
+
+        ripple.style.animation = "ripple 1s ease-out";
+
+        ripple.addEventListener("animationend", () => {
+          ripple.style.display = "none";
+        });
+      });
+    </script>
+  </body>
+</html>
