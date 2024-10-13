@@ -1,6 +1,10 @@
 body {
   margin: 0;
   background-color: rgb(49, 49, 209);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .circle {
@@ -8,12 +12,7 @@ body {
   background-color: gray;
   border-radius: 100%;
   aspect-ratio: 1/1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  margin: auto;
+  position: relative;
 }
 
 h1 {
@@ -29,22 +28,25 @@ h1 {
   margin: auto;
 }
 
+.circle:hover {
+  cursor: pointer;
+}
+
 .circle::before {
   content: "";
-  /* space content ekak laba ganimata */
-
   border: 15px solid white;
   border-radius: 100%;
   border-top-color: red;
-  /*height ekak width ekak dunne nathi unama adala parenge size ekata me space content eka adenawa*/
-
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   margin: auto;
+  animation: none;
+}
 
+.circle:hover::before {
   animation: aroundTheCircle 3s infinite;
 }
 
