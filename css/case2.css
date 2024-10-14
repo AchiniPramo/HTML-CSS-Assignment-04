@@ -13,47 +13,35 @@ body {
   border-radius: 100%;
   aspect-ratio: 1/1;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  font-size: 45px;
 }
 
-h1 {
-  width: max-content;
-  height: max-content;
-  color: white;
+.around {
   position: absolute;
-  font-size: 35px;
+  border: 15px solid white;
+  border-radius: 100%;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  margin: auto;
+  border-top-color: red;
 }
 
-.circle:hover {
+.circle:hover .around {
+  animation: rotateRedBorder 2s infinite;
   cursor: pointer;
 }
 
-.circle::before {
-  content: "";
-  border: 15px solid white;
-  border-radius: 100%;
-  border-top-color: red;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  animation: none;
-}
-
-.circle:hover::before {
-  animation: aroundTheCircle 3s infinite;
-}
-
-@keyframes aroundTheCircle {
+@keyframes rotateRedBorder {
   from {
     transform: rotate(0);
   }
+
   to {
     transform: rotate(360deg);
   }
